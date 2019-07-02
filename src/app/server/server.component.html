@@ -1,0 +1,14 @@
+<p>Server Id = {{serverId}}</p>
+<p>Server Status = {{serverStatus}}</p>
+
+<button class="btn btn-success" [disabled] = "allowNewServer" (click)="onCreateServer()">Create Server</button>
+<p>{{serverMessage}}</p>
+
+<input type="text" (input)="onUpdateServerName($event)">
+<p >{{serverName}}</p>
+
+<p *ngFor = "let n of nameList ;  let i = index">
+    <div *ngIf="i == 3">
+        <span> {{i}} </span>
+    </div>
+</p>
