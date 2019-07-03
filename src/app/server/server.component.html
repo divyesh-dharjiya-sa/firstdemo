@@ -8,7 +8,5 @@
 <p >{{serverName}}</p>
 
 <p *ngFor = "let n of nameList ;  let i = index">
-    <div *ngIf="i == 3">
-        <span> {{i}} </span>
-    </div>
+   {{i + 1}} - {{n}}
 </p>
