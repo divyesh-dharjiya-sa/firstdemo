@@ -1,12 +1,30 @@
-<p>Server Id = {{serverId}}</p>
-<p>Server Status = {{serverStatus}}</p>
+    <p>Server Id = {{serverId}}</p>
+    <p>Server Status = {{serverStatus}}</p>
+    
+    <button class="btn btn-success" [disabled] = "allowNewServer" (click)="onCreateServer()">Create Server</button>
+    <p>{{serverMessage}}</p>
+    
+    <input type="text" (input)="onUpdateServerName($event)">
+    <p >{{serverName}}</p>
+    
+    <p *ngFor = "let n of nameList ;  let i = index">
+       {{i + 1}} - {{n}}
+    </p>
 
-<button class="btn btn-success" [disabled] = "allowNewServer" (click)="onCreateServer()">Create Server</button>
-<p>{{serverMessage}}</p>
 
-<input type="text" (input)="onUpdateServerName($event)">
-<p >{{serverName}}</p>
+    <div>
+       <button class="btn btn-primary" (click) = "onlyOdd = !onlyOdd">Only Odd Number</button> <br><br>
 
-<p *ngFor = "let n of nameList ;  let i = index">
-   {{i + 1}} - {{n}}
-</p>
+       <ul class="list-group">
+           <div *ngIf = "onlyOdd">
+              <li *ngFor = "let odd of oddNumber" class="list-group-item">
+                 {{odd}}
+              </li>
+           </div>
+           <div *ngIf = "!onlyOdd">
+            <li *ngFor = "let even of evenNumber" class="list-group-item">
+               {{even}}
+            </li>
+         </div>
+       </ul>
+    </div>

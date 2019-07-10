@@ -13,6 +13,11 @@ export class ServerComponent implements OnInit {
   serverMessage: string = "Offline";
   serverName: string = "";
   nameList: string[] = ['abc','xyz','sgv','ggg','he'];
+  
+  numbers =[1,2,3,4,5];
+  oddNumber = [1,3,5];
+  evenNumber =[2,4];
+  onlyOdd = false;
 
   constructor() { 
     setTimeout(() => {
